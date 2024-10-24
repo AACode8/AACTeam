@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lets Check Your MBTI!</title>
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap'><link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="wrapper">
+<nav class="sidebar close">
+    <header>
+      <div class="image-text">
+        <span class="image">
+          <img src="logo21.png" alt="logo">
+        </span>
+
+        <div class="text logo-text">
+          <span class="name" style="font-size: medium;">Your MBTI Checker!</span>
+        </div>
+      </div>
+  
+      <i class='bx bx-chevron-right toggle'></i>
+    </header>
+  
+    <div class="menu-bar">
+      <div class="menu">
+        <ul class="menu-links">
+          <li class="nav-link">
+            <a href="#" onclick="showSection('dashboard-section')">
+              <i class='bx bx-home-alt icon'></i>
+              <span class="text nav-text">Dashboard</span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="#" onclick="showSection('mbtipedia-section')">
+              <i class='bx bx-star icon'></i>
+              <span class="text nav-text">MBTIPEDIA</span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="#" onclick="showSection('check-mbti-section')">
+              <i class='bx bx-edit icon'></i>
+              <span class="text nav-text">Check Your MBTI</span>
+            </a>
+          </li>
+
+          <li class="nav-link">
+            <a href="#" onclick="showSection('about-section')">
+              <i class='bx bx-id-card icon'></i>
+              <span class="text nav-text">About Us</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+  
+      <div class="bottom-content">
+        <li class="mode">
+          <div class="sun-moon">
+            <i class='bx bx-moon icon moon'></i>
+            <i class='bx bx-sun icon sun'></i>
+          </div>
+          <span class="mode-text text">Dark mode</span>
+  
+          <div class="toggle-switch">
+            <span class="switch"></span>
+          </div>
+        </li>
+      </div>
+    </div>
+  </nav>
+  
+<div class="content-section" id="dashboard-section">
+    <div class="dashboard" id="dashboard">
+      <img src="logo21.png" alt="logo">
+  <h1 class="typing" id="typing-text"></h1>
+  <p>Here, you can learn more about the MBTI personality types</br> and take a test to find out your own type.</p>
+    </div>
+</div>
+
+<div class="content-section" id="check-mbti-section">
+  <div class="mbti-info" id="mbti-info">
+    <h2>MBTI TEST!</h2>
+    <div class="form-container">
+    <form id="mbtiForm" method="POST">
+      <div class="question-grup">
+        <p class="question">1. When you attend a party, do you prefer?</p>
+        <div class="radio-group">
+          <input type="radio" id="radio1" name="question1" value="E" class="radio-input">
+          <label for="radio1" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Interacting with many people
+          </label>
+          <input type="radio" id="radio2" name="question1" value="I" class="radio-input">
+          <label for="radio2" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Having one-on-one conversations
+          </label>
+        </div>
+      </div>
+
+      <div class="question-grup">
+        <p class="question">2. How do you recharge your energy?</p>
+        <div class="radio-group">
+          <input type="radio" id="radio3" name="question2" value="E" class="radio-input">
+          <label for="radio3" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            By socializing with others
+          </label>
+          <input type="radio" id="radio4" name="question2" value="I" class="radio-input">
+          <label for="radio4" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            By spending time alone
+          </label>
+        </div>
+      </div>
+
+      <div class="question-grup">
+        <p class="question">3. In a new situation, do you prefer to?</p>
+        <div class="radio-group">
+          <input type="radio" id="radio5" name="question3" value="E" class="radio-input">
+          <label for="radio5" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Jump in and start talking to people
+          </label>
+          <input type="radio" id="radio6" name="question3" value="I" class="radio-input">
+          <label for="radio6" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Observe and wait for others to approach you
+          </label>
+        </div>
+      </div>
+
+      <div class="question-grup">
+        <p class="question">4. When solving problems, do you focus more on?</p>
+        <div class="radio-group">
+          <input type="radio" id="radio7" name="question4" value="S" class="radio-input">
+          <label for="radio7" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Practical solutions
+          </label>
+          <input type="radio" id="radio8" name="question4" value="N" class="radio-input">
+          <label for="radio8" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Innovative ideas
+          </label>
+        </div>
+      </div>
+
+      <div class="question-grup">
+        <p class="question">5. Do you find it easier to?</p>
+        <div class="radio-group">
+          <input type="radio" id="radio9" name="question5" value="S" class="radio-input">
+          <label for="radio9" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Focus on what is currently happening
+          </label>
+          <input type="radio" id="radio10" name="question5" value="N" class="radio-input">
+          <label for="radio10" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Imagine future possibilities
+          </label>
+        </div>
+      </div>
+
+      <div class="question-grup">
+        <p class="question">6. When making decisions, do you rely on?</p>
+        <div class="radio-group">
+          <input type="radio" id="radio11" name="question6" value="S" class="radio-input">
+          <label for="radio11" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Facts and details
+          </label>
+          <input type="radio" id="radio12" name="question6" value="N" class="radio-input">
+          <label for="radio12" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Gut instincts and hunches
+          </label>
+        </div>
+      </div>
+
+      <div class="question-grup">
+        <p class="question">7. When giving feedback, are you more likely to?</p>
+        <div class="radio-group">
+          <input type="radio" id="radio13" name="question7" value="S" class="radio-input">
+          <label for="radio13" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Be straightforward and objective
+          </label>
+          <input type="radio" id="radio14" name="question7" value="N" class="radio-input">
+          <label for="radio14" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Consider the emotional impact
+          </label>
+        </div>
+      </div>
+
+      <div class="question-grup">
+        <p class="question">8. Which one do you prioritize?</p>
+        <div class="radio-group">
+          <input type="radio" id="radio15" name="question8" value="S" class="radio-input">
+          <label for="radio15" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Logical reasoning
+          </label>
+          <input type="radio" id="radio16" name="question8" value="N" class="radio-input">
+          <label for="radio16" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Harmony and compassion
+          </label>
+        </div>
+      </div>
+
+      <div class="question-grup">
+        <p class="question">9. When making decisions, do you usually?</p>
+        <div class="radio-group">
+          <input type="radio" id="radio17" name="question9" value="S" class="radio-input">
+          <label for="radio17" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Focus on fairness and consistency
+          </label>
+          <input type="radio" id="radio18" name="question9" value="N" class="radio-input">
+          <label for="radio18" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Consider individual circumstances
+          </label>
+        </div>
+      </div>
+
+      <div class="question-grup">
+        <p class="question">10. Which one do you prefer?</p>
+        <div class="radio-group">
+          <input type="radio" id="radio19" name="question10" value="S" class="radio-input">
+          <label for="radio19" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Plan ahead and organize things in advance
+          </label>
+          <input type="radio" id="radio20" name="question10" value="N" class="radio-input">
+          <label for="radio20" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Go with the flow and keep options open
+          </label>
+        </div>
+      </div>
+
+      <div class="question-grup">
+        <p class="question">11. When it comes to deadlines, which one do you prefer?</p>
+        <div class="radio-group">
+          <input type="radio" id="radio21" name="question11" value="S" class="radio-input">
+          <label for="radio21" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Stick to a strict schedule
+          </label>
+          <input type="radio" id="radio22" name="question11" value="N" class="radio-input">
+          <label for="radio22" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Work best under last-minute pressure
+          </label>
+        </div>
+      </div>
+
+      <div class="question-grup">
+        <p class="question">12. Do you feel more comfortable when your life is?</p>
+        <div class="radio-group">
+          <input type="radio" id="radio23" name="question12" value="S" class="radio-input">
+          <label for="radio23" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Structured and organized
+          </label>
+          <input type="radio" id="radio24" name="question12" value="N" class="radio-input">
+          <label for="radio24" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Flexible and open-ended
+          </label>
+        </div>
+      </div>
+
+      <div class="question-grup">
+        <p class="question">13. In your daily life, do you tend to focus more on?</p>
+        <div class="radio-group">
+          <input type="radio" id="radio25" name="question13" value="S" class="radio-input">
+          <label for="radio25" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            The present moment
+          </label>
+          <input type="radio" id="radio26" name="question13" value="N" class="radio-input">
+          <label for="radio26" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Future possibilities and dreams
+        </label>
+          </label>
+        </div>
+      </div>
+
+      <div class="question-grup">
+        <p class="question">14. When making important decisions, which one do you prefer?</p>
+        <div class="radio-group">
+          <input type="radio" id="radio27" name="question14" value="S" class="radio-input">
+          <label for="radio27" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Focus on facts and data
+          </label>
+          <input type="radio" id="radio28" name="question14" value="N" class="radio-input">
+          <label for="radio28" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Consider how it will affect people
+          </label>
+        </div>
+      </div>
+
+      <div class="question-grup">
+        <p class="question">15. Are you more likely to?</p>
+        <div class="radio-group">
+          <input type="radio" id="radio29" name="question15" value="S" class="radio-input">
+          <label for="radio29" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Start conversations with strangers
+          </label>
+          <input type="radio" id="radio30" name="question15" value="N" class="radio-input">
+          <label for="radio30" class="radio-label">
+            <span class="radio-inner-circle"></span>
+            Wait for others to initiate conversations
+          </label>
+        </div>
+      </div>
+      <button id="checkButton" type="button" onclick="calculateMBTI()">CHECK YOUR MBTI!</button>
+    </form>
+  </div>
+    <div id="result" class="results hidden"></div>
+    <button id="restartButton" class="hidden" onclick="restartTest()">Restart</button>
+  </div>
+  <footer>
+    <div class="bottom-bar">
+      <p>Copyright&copy; 2024 AAC Team . All rights reserved</p>
+  </div>
+  </footer>
+</div>
+
+<div class="content-section" id="mbtipedia-section">
+  <div class="mbtipedia" id="mbtipedia">
+    <h1>WHAT IS MBTI?</h1>
+    <p> The personality test known as the <strong>Myers-Briggs Type Indicator (MBTI)</strong>
+      was originally made public in 1942 by Katharine Cook Briggs and her daughter Isabel Briggs Myers.</br>
+      Carl Jung's psychology theory, as cited in The Atlantic, serves as the foundation for this concept.</br>
+      They have had a difficult time studying personality indications all of their lives.</br> 
+      Finding a career that fits each person and getting to know oneself are the main objectives.</br></br></br>
+      You can learn that personality is much more than that by taking the MBTI exam.</br>
+      According to MBTI, a person's personality is divided into various dichotomous categories, such as </br><strong>Introversion (I) vs. Extraversion (E)</br> Intuitive (N) vs. Sensory (S)</br> Thinking (T) vs. Feeling (F)</br> Judging (J) vs. Perceiving (P)</strong></p>
+    </div>
+    <div class="mbtipedia" id="mbtipedia">
+    <h2>GLOBAL MBTI STATISTIC</h2></div>
+  <div class="stats">
+    <div class="stat-card">
+     <i class="bx bx-user" style="color: #EF4444;"></i>
+     <h3>Introvert</h3>
+     <p>50-60%</p>
+    </div>
+    <div class="stat-card">
+     <i class="bx bx-group" style="color: #EF4444;"></i>
+     <h3>Extrovert</h3>
+     <p>40-50%</p>
+    </div>
+    <div class="stat-card">
+     <i class="bx bx-low-vision" style="color: #EF4444;"></i>
+     <h3>Sensing</h3>
+     <p>65-70%</p>
+    </div>
+    <div class="stat-card">
+     <i class="bx bx-brain" style="color: #EF4444;"></i>
+     <h3>Intuition</h3>
+     <p>30-35%</p>
+    </div>
+    <div class="stat-card">
+     <i class="bx bx-calculator" style="color: #EF4444;"></i>
+     <h3>Thinking</h3>
+     <p>40-45%</p>
+    </div>
+    <div class="stat-card">
+     <i class="bx bx-heart" style="color: #EF4444;"></i>
+     <h3>Feeling</h3>
+     <p>55-60%</p>
+    </div>
+    <div class="stat-card">
+     <i class="bx bx-calendar" style="color: #EF4444;"></i>
+     <h3>Judging</h3>
+     <p>55-60%</p>
+    </div>
+    <div class="stat-card">
+     <i class="bx bx-refresh" style="color: #EF4444;"></i>
+     <h3>Perceiving</h3>
+     <p>40-45%</p>
+    </div>
+  </div>
+  <div class="mbtipedia" id="mbtipedia">
+  <h2>16 PERSONALITIES OF MBTI</h2></div>
+  <div class="container">
+    <div class="card">
+      <div class="items"><img src="mbtitype/INFP.png" alt="INFP"></div>
+      <div class="description">INFP - The Mediator: Introverted, Intuitive, Feeling, Perceiving</div>
+      <div class="button-container"><a class="learn-more-btn" href="#" onclick="openfact('INFP')">Learn More</a></div>
+    </div>
+
+    <div class="card">
+      <div class="items"><img src="mbtitype/INFJ.png" alt="INFJ"></div>
+      <div class="description">INFJ - The Advocate: Introverted, Intuitive, Feeling, Judging</div>
+      <div class="button-container"><a class="learn-more-btn" href="#" onclick="openfact('INFJ')">Learn More</a></div>
+    </div>
+
+    <div class="card">
+      <div class="items"><img src="mbtitype/INTP.png" alt="INTP"></div>
+      <div class="description">INTP - The Thinker: Introverted, Intuitive, Thinking, Perceiving.</div>
+      <div class="button-container"><a class="learn-more-btn" href="#" onclick="openfact('INTP')">Learn More</a></div>
+    </div>
+
+    <div class="card">
+      <div class="items"><img src="mbtitype/INTJ.png" alt="INTJ"></div>
+      <div class="description">INTJ - The Architect: Introverted, Intuitive, Thinking, Judging.</div>
+      <div class="button-container"><a class="learn-more-btn" href="#" onclick="openfact('INTJ')">Learn More</a></div>
+    </div>
+
+    <div class="card">
+      <div class="items"><img src="mbtitype/ENFP.png" alt="ENFP"></div>
+      <div class="description">ENFP - The Campaigner: Extraverted, Intuitive, Feeling, Perceiving.</div>
+      <div class="button-container"><a class="learn-more-btn" href="#" onclick="openfact('ENFP')">Learn More</a></div>
+    </div>
+
+    <div class="card">
+      <div class="items"><img src="mbtitype/ENFJ.png" alt="ENFJ"></div>
+      <div class="description">ENFJ - The Protagonist: Extraverted, Intuitive, Feeling, Judging.</div>
+      <div class="button-container"><a class="learn-more-btn" href="#" onclick="openfact('ENFJ')">Learn More</a></div>
+    </div>
+
+    <div class="card">
+      <div class="items"><img src="mbtitype/ENTJ.png" alt="INFP"></div>
+      <div class="description">ENTJ - The Commander: Extraverted, Intuitive, Thinking, Judging.</div>
+      <div class="button-container"><a class="learn-more-btn" href="#" onclick="openfact('ENTJ')">Learn More</a></div>
+    </div>
+
+    <div class="card">
+      <div class="items"><img src="mbtitype/ENTP.png" alt="ENTJ"></div>
+      <div class="description">ENTP - The Debater: Extraverted, Intuitive, Thinking, Perceiving.</div>
+      <div class="button-container"><a class="learn-more-btn" href="#" onclick="openfact('ENTP')">Learn More</a></div>
+    </div>
+
+    <div class="card">
+      <div class="items"><img src="mbtitype/ISFP.png" alt="ISFP"></div>
+      <div class="description">ISFP - The Adventurer: Introverted, Sensing, Feeling, Perceiving.</div>
+      <div class="button-container"><a class="learn-more-btn" href="#" onclick="openfact('ISFP')">Learn More</a></div>
+    </div>
+
+    <div class="card">
+      <div class="items"><img src="mbtitype/ISFJ.png" alt="ISFJ"></div>
+      <div class="description">ISFJ - The Defender: Introverted, Sensing, Feeling, Judging.</div>
+      <div class="button-container"><a class="learn-more-btn" href="#" onclick="openfact('ISFJ')">Learn More</a></div>
+    </div>
+
+    <div class="card">
+      <div class="items"><img src="mbtitype/ISTP.png" alt="ISTP"></div>
+      <div class="description">ISTP - The Virtuoso: Introverted, Sensing, Thinking, Perceiving.</div>
+      <div class="button-container"><a class="learn-more-btn" href="#" onclick="openfact('ISTP')">Learn More</a></div>
+    </div>
+
+    <div class="card">
+      <div class="items"><img src="mbtitype/ISTJ.png" alt="ISTJ"></div>
+      <div class="description">ISTJ - The Logistician: Introverted, Sensing, Thinking, Judging.</div>
+      <div class="button-container"><a class="learn-more-btn" href="#" onclick="openfact('ISTJ')">Learn More</a></div>
+    </div>
+
+    <div class="card">
+      <div class="items"><img src="mbtitype/ESFP.png" alt="ESFP"></div>
+      <div class="description">ESFP - The Entertainer: Extraverted, Sensing, Feeling, Perceiving.</div>
+      <div class="button-container"><a class="learn-more-btn" href="#" onclick="openfact('ESFP')">Learn More</a></div>
+    </div>
+
+    <div class="card">
+      <div class="items"><img src="mbtitype/ESFJ.png" alt="ESFJ"></div>
+      <div class="description">ESFJ - The Consul: Extraverted, Sensing, Feeling, Judging.</div>
+      <div class="button-container"><a class="learn-more-btn" href="#" onclick="openfact('ESFJ')">Learn More</a></div>
+    </div>
+
+    <div class="card">
+      <div class="items"><img src="mbtitype/ESTP.png" alt="ESTP"></div>
+      <div class="description">ESTP - The Entrepreneur: Extraverted, Sensing, Thinking, Perceiving.</div>
+      <div class="button-container"><a class="learn-more-btn" href="#" onclick="openfact('ESTP')">Learn More</a></div>
+    </div>
+
+    <div class="card">
+      <div class="items"><img src="mbtitype/ESTJ.png" alt="ESTJ"></div>
+      <div class="description">ESTJ - The Executive: Extraverted, Sensing, Thinking, Judging.</div>
+      <div class="button-container"><a class="learn-more-btn" href="#" onclick="openfact('ESTJ')">Learn More</a></div>
+    </div>
+  </div>
+
+  <div class="mbti-fact" id="mbtifact-INFP">
+    <div class="fact-content">
+        <span class="close-btn" onclick="closefact('INFP')">&times;</span>
+        <img src="mbtipedia2/INFP.png" alt="INFP Modal Image">
+    </div>
+  </div>
+
+  <div class="mbti-fact" id="mbtifact-INFJ">
+    <div class="fact-content">
+        <span class="close-btn" onclick="closefact('INFJ')">&times;</span>
+        <img src="mbtipedia2/INFJ.png" alt="INFJ Modal Image">
+    </div>
+  </div>
+
+  <div class="mbti-fact" id="mbtifact-INTP">
+    <div class="fact-content">
+        <span class="close-btn" onclick="closefact('INTP')">&times;</span>
+        <img src="mbtipedia2/INTP.png" alt="INTP Modal Image">
+    </div>
+  </div>
+
+  <div class="mbti-fact" id="mbtifact-INTJ">
+    <div class="fact-content">
+        <span class="close-btn" onclick="closefact('INTJ')">&times;</span>
+        <img src="mbtipedia2/INTJ.png" alt="INTJ Modal Image">
+    </div>
+  </div>
+
+  <div class="mbti-fact" id="mbtifact-ENFP">
+    <div class="fact-content">
+        <span class="close-btn" onclick="closefact('ENFP')">&times;</span>
+        <img src="mbtipedia2/ENFP.png" alt="ENFP Modal Image">
+    </div>
+  </div>
+
+  <div class="mbti-fact" id="mbtifact-ENFJ">
+    <div class="fact-content">
+        <span class="close-btn" onclick="closefact('ENFJ')">&times;</span>
+        <img src="mbtipedia2/ENFJ.png" alt="ENFJ Modal Image">
+    </div>
+  </div>
+
+  <div class="mbti-fact" id="mbtifact-ENTJ">
+    <div class="fact-content">
+        <span class="close-btn" onclick="closefact('ENTJ')">&times;</span>
+        <img src="mbtipedia2/ENTJ.png" alt="ENTJ Modal Image">
+    </div>
+  </div>
+
+  <div class="mbti-fact" id="mbtifact-ENTP">
+    <div class="fact-content">
+        <span class="close-btn" onclick="closefact('ENTP')">&times;</span>
+        <img src="mbtipedia2/ENTP.png" alt="ENTP Modal Image">
+    </div>
+  </div>
+
+  <div class="mbti-fact" id="mbtifact-ISFP">
+    <div class="fact-content">
+        <span class="close-btn" onclick="closefact('ISFP')">&times;</span>
+        <img src="mbtipedia2/ISFP.png" alt="ISFP Modal Image">
+    </div>
+  </div>
+
+  <div class="mbti-fact" id="mbtifact-ISFJ">
+    <div class="fact-content">
+        <span class="close-btn" onclick="closefact('ISFJ')">&times;</span>
+        <img src="mbtipedia2/ISFJ.png" alt="ISFJ Modal Image">
+    </div>
+  </div>
+
+  <div class="mbti-fact" id="mbtifact-ISTP">
+    <div class="fact-content">
+        <span class="close-btn" onclick="closefact('ISTP')">&times;</span>
+        <img src="mbtipedia2/ISTP.png" alt="ISTP Modal Image">
+    </div>
+  </div>
+
+  <div class="mbti-fact" id="mbtifact-ISTJ">
+    <div class="fact-content">
+        <span class="close-btn" onclick="closefact('ISTJ')">&times;</span>
+        <img src="mbtipedia2/ISTJ.png" alt="ISTJ Modal Image">
+    </div>
+  </div>
+
+  <div class="mbti-fact" id="mbtifact-ESFP">
+    <div class="fact-content">
+        <span class="close-btn" onclick="closefact('ESFP')">&times;</span>
+        <img src="mbtipedia2/ESFP.png" alt="ESFP Modal Image">
+    </div>
+  </div>
+
+  <div class="mbti-fact" id="mbtifact-ESFJ">
+    <div class="fact-content">
+        <span class="close-btn" onclick="closefact('ESFJ')">&times;</span>
+        <img src="mbtipedia2/ESFJ.png" alt="ESFJ Modal Image">
+    </div>
+  </div>
+
+  <div class="mbti-fact" id="mbtifact-ESTP">
+    <div class="fact-content">
+        <span class="close-btn" onclick="closefact('ESTP')">&times;</span>
+        <img src="mbtipedia2/ESTP.png" alt="ESTP Modal Image">
+    </div>
+  </div>
+
+  <div class="mbti-fact" id="mbtifact-ESTJ">
+    <div class="fact-content">
+        <span class="close-btn" onclick="closefact('ESTJ')">&times;</span>
+        <img src="mbtipedia2/ESTJ.png" alt="ESTJ Modal Image">
+    </div>
+  </div>
+  <footer>
+    <div class="bottom-bar">
+      <p>Copyright&copy; 2024 AAC Team . All rights reserved</p>
+  </div>
+  </footer>
+</div>
+
+<div class="content-section" id="about-section">
+  <div class="about-container">
+    <div class="header">
+      <div class="header-text">
+        <h1>Hi, We are AAC Teams!</h1>
+        <p>We, the AAC Team, created this website to help individuals explore and understand
+          their personality traits using the MBTI framework. Our engaging platform makes learning 
+          about different personality types fun and insightful. 
+          The logo symbolizes MBTI's playful nature, showing contrast between traits. 
+          The varied fonts represent diversity while the swirling design and stars suggest 
+          growth and self-discovery, helping users navigate personal development and relationships.</p>
+      </div>
+    </div>
+    <div class="team-section">
+      <h2>Meet our Creative Team</h2>
+      <div class="team-members">
+        <div class="team-member">
+          <div class="ourcard">
+            <div class="bg"></div>
+          </div>
+          <h3>Anna Novyka Aksanti</h3>
+          <p>as Hacker</p>
+        </div>
+        
+        <div class="team-member">
+          <div class="ourcard">
+            <div class="bg2"></div>
+          </div>
+          <h3>Cantika Dwi Fransiska</h3>
+          <p>as Hipster</p>
+        </div>
+        
+        <div class="team-member">
+          <div class="ourcard">
+            <div class="bg3"></div>
+          </div>
+          <h3>Aisyka Zenni Putri</h3>
+          <p>as Hustler</p>
+        </div>
+      </div>
+    </div>    
+  </div>
+  <footer class="about-section">
+    <div class="footerContainer">
+    <div class="row">
+      <div class="col">
+        <h3>Our Emails</h3>
+        <p class="email-id">
+          <i class="bx bxl-gmail" style="color: #EF4444;"></i> 
+          <a href="mailto:anna.23452@mhs.unesa.ac.id">anna.23452@mhs.unesa.ac.id</a>
+        </p>
+        <p class="email-id">
+          <i class="bx bxl-gmail" style="color: #EF4444;"></i> 
+          <a href="mailto:cantika.23306@mhs.unesa.ac.id">cantika.23306@mhs.unesa.ac.id</a>
+        </p>
+        <p class="email-id">
+          <i class="bx bxl-gmail" style="color: #EF4444;"></i> 
+          <a href="mailto:aisyka.23206@mhs.unesa.ac.id">aisyka.23206@mhs.unesa.ac.id</a>
+        </p>
+      </div>
+      <div class="col">
+        <h3>Our Instagram</h3>
+        <p class="instagram-id">
+          <i class="bx bxl-instagram" style="color: #58054b;"></i> 
+          <a href="https://www.instagram.com/akstnna_" target="_blank">@akstnna_</a>
+        </p>
+        <p class="instagram-id">
+          <i class="bx bxl-instagram" style="color: #58054b;"></i> 
+          <a href="https://www.instagram.com/cntkadwii_" target="_blank">@cntkadwii_</a>
+        </p>
+        <p class="instagram-id">
+          <i class="bx bxl-instagram" style="color: #58054b;"></i> 
+          <a href="https://www.instagram.com/aisykaasep" target="_blank">@aisykaasep</a>
+        </p>
+      </div>
+      <div class="col">
+        <h3>Our YouTube</h3>
+        <p class="youtube-id">
+          <i class="bx bxl-youtube" style="color: #a30707;"></i> 
+          <a href="https://youtube.com/@aacstudio-i7g?si=k6rh41g-ngvzs2gf" target="_blank">AAC Studio</a>
+        </p>
+      </br>
+        <h3>Our GitHub</h3>
+        <p class="github-id">
+          <i class="bx bxl-github" style="color: #2f2d2d;"></i> 
+          <a href="https://github.com/AACode8" target="_blank">AAC Team GitHub</a>
+        </p>
+      </div>
+    </div>
+  </div>
+    <div class="footerBottom">
+      <p>Copyright&copy; 2024 AAC Team . All rights reserved</p>
+  </div>
+  </footer>
+</div>
+
+</div>
+  <script  src="./script.js"></script>
+</body>
+</html>
