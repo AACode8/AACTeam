@@ -661,8 +661,10 @@ body.dark button:hover {
   font-family: 'Poppins';
   font-size: 3.5em;
   margin-top: 20px;
+  margin-left: 320px;
   font-weight: bolder;
   background-color: #FDFBD9;
+  display: inline-block;
 }
 
 .mbti-fact {
